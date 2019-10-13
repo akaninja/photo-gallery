@@ -1,0 +1,11 @@
+<h1>Novo Álbum</h1>
+
+<%= form_with model: @album, class: "nifty_form" do |f| %>
+  <%= f.label :title, 'Título' %>
+  <%= f.text_field :title %>
+  <%= f.label :photos, 'Fotos' %>
+  <%= f.file_field :photos, multiple: true %>
+  <%= f.label :tag, 'Marcadores' %>
+  <%= f.text_field :tag %>
+  <%= f.submit 'Enviar'  %>
+<% end %>

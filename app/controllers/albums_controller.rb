@@ -5,10 +5,12 @@ class AlbumsController < ApplicationController
 
  def create
   @album = Album.new(album_params)
-  @album.save!
-  byebug
-  redirect_to @album
- end
+  if @album.save
+    redirect_to @album
+  else
+    render :new
+  end
+end
 
  def show
   @album = Album.find(params[:id])

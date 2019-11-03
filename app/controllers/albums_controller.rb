@@ -13,12 +13,12 @@ class AlbumsController < ApplicationController
 end
 
  def show
-  @album = Album.find(params[:id])
+  @album = AlbumPresenter.new(Album.find(params[:id]))
  end
 
  private
 
  def album_params
-   params.require(:album).permit(:title, :status ,:tag, photos:[])
+   params.require(:album).permit(:title, :status, :tag, photos:[])
  end
 end

@@ -1,5 +1,6 @@
 <h1><%= @album.title %></h1>
-<p><%= @album.status %></p>
+<p><%= @album.sharing_option %></p>
+
 <% @album.photos.each do |photo| %>
   <%= image_tag photo %>
 <% end %>

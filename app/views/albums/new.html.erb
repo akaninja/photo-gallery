@@ -8,6 +8,10 @@
 <%= form_with model: @album, class: "nifty_form" do |f| %>
   <%= f.label :title, 'Título' %>
   <%= f.text_field :title %>
+  <%= f.radio_button :status, :exclusive %>
+  <%= f.label :status_exclusive, 'Privado' %>
+  <%= f.radio_button :status, :shared %>
+  <%= f.label :status_shared, 'Compartilhado' %>
   <%= f.label :photos, 'Fotos' %>
   <%= f.file_field :photos, multiple: true %>
   <%= f.label :tag, 'Marcadores' %>
